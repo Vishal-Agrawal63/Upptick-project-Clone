@@ -126,6 +126,12 @@ nav {
 	border-image: linear-gradient(to right, red, purple, yellow) 1;
 	padding: 8px 18px;
 }
+
+.dynamic-txts {
+	position: relative; /* Allow absolute positioning for children */
+	overflow: hidden; /* Hide overflow to prevent showing the list items outside their container */
+}
+
 .dynamic-txts li {
 	font-size: 60px;
 	font-weight: 500;
@@ -309,6 +315,33 @@ nav {
 
 .main-our-vision-section {
 	gap: 100px;
+}
+
+/* //image overlay bottom */
+
+.our-vision-left {
+	position: relative; /* Necessary for absolute positioning of the overlay */
+}
+
+.image-container {
+	position: relative; /* Positioning context for the overlay */
+}
+
+.image-container img {
+	display: block; /* Remove space below the image */
+}
+
+.overlay {
+	position: absolute;
+	bottom: 0; /* Align to the bottom of the image */
+	left: 0; /* Align to the left */
+	right: 0; /* Stretch to the right */
+	height: 100%; /* Adjust this value for desired height of the overlay */
+	background: linear-gradient(
+		to top,
+		rgba(9, 5, 7, 0.9),
+		rgba(12, 4, 9, 0)
+	); /* Gradient overlay */
 }
 
 .our-vision-right {
