@@ -91,40 +91,33 @@ nav {
 	/* background-color: black; */
 	padding: 50px 0;
 	background-image: url("assets/bg-welcome.avif");
-
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 }
 
 .main-welcome-section {
+	/* display: inline-flex; */
 	flex-direction: column;
 	gap: 20px;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	animation: backgroundSlide 20s ease infinite;
 	margin-bottom: 100px;
 }
 
-@keyframes backgroundSlide {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
-.welcome-to-uptick {
+.wrapper .welcome-to-uptick {
 	margin-top: 80px;
 	border-width: 2px;
 	border-radius: 25px;
 	border-style: solid;
 	border-image: linear-gradient(to right, red, purple, yellow) 1;
 	padding: 8px 18px;
+}
+
+.wrapper .static-txt {
+	font-size: 60px;
+	font-weight: 500px;
 }
 
 .dynamic-txts {
@@ -136,7 +129,7 @@ nav {
 	font-size: 60px;
 	font-weight: 500;
 	color: rgb(230, 159, 171);
-	animation: slide 12s steps(4) infinite;
+	animation: slide 6s steps(4) infinite;
 	position: relative;
 	top: 0;
 }
@@ -149,22 +142,17 @@ nav {
 
 .dynamic-txts li span {
 	position: relative;
-}
-
-.main-welcome-section .dynamic-txts {
-	height: 90px;
-	line-height: 90px;
 	overflow: hidden;
 }
 
 .dynamic-txts li span::after {
 	content: "";
 	position: absolute;
-	left: 0;
 	height: 100%;
 	width: 100%;
+	left: 0;
 	border-left: 2px solid pink;
-	animation: typing 1.5s steps(25) infinite;
+	animation: typing 1.5s steps(10) infinite;
 	transition: 0.2s ease-out;
 	background-image: url("assets/bg-welcome.avif");
 	background-size: cover;
@@ -172,9 +160,23 @@ nav {
 	background-repeat: no-repeat;
 }
 
+.main-welcome-section .dynamic-txts {
+	margin-left: 15px;
+	height: 90px;
+	/* line-height: 80px; */
+}
+
 @keyframes typing {
+	0% {
+		left: 0%;
+	}
+	50% {
+		left: 50%;
+	}
 	100% {
 		left: 100%;
+		margin: 0 -35px 0 35px;
+		animation: typing 1.5s steps(25) forwards; /* Holds for 1 second */
 	}
 }
 
